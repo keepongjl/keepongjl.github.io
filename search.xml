@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>hello</title>
-      <link href="/2019/08/15/hello/"/>
-      <url>/2019/08/15/hello/</url>
-      
-        <content type="html"><![CDATA[<h3 id="I"><a href="#I" class="headerlink" title="I"></a>I</h3><p>do not forget what you realy want  ?</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Markdown </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Typora </tag>
-            
-            <tag> Markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2019/08/15/hello-world/"/>
       <url>/2019/08/15/hello-world/</url>
