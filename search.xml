@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>linux环境配置</title>
+      <link href="/2019/08/18/linux-env/"/>
+      <url>/2019/08/18/linux-env/</url>
+      
+        <content type="html"><![CDATA[<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><p>下载jdk的rpm文件<code>jdk-8u221-linux-i586.rpm</code></p><pre><code class="shell">## 安装JDKrpm -ivh jdk-8u221-linux-i586.rpm## 修改文件夹名称cd /usr/java/mv jdk1.8.0_221-i586/ jdk1.8## 配置jdk的环境变量cd /usr/local/vi .bashrc## 修改环境变量配置export JAVA_HOME=/usr/java/jdk1.8export PATH=$PATH:$JAVA_HOME/bin## 刷新配置source .bashrc## 验证是否安装成功java -version</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> linux环境配置 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>kafka安装</title>
       <link href="/2019/08/18/kafka-install/"/>
       <url>/2019/08/18/kafka-install/</url>

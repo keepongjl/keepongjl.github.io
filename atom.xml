@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keepongjl.github.io/"/>
-  <updated>2019-08-18T05:00:47.066Z</updated>
+  <updated>2019-08-18T10:07:56.825Z</updated>
   <id>http://keepongjl.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux环境配置</title>
+    <link href="http://keepongjl.github.io/2019/08/18/linux-env/"/>
+    <id>http://keepongjl.github.io/2019/08/18/linux-env/</id>
+    <published>2019-08-18T10:27:25.000Z</published>
+    <updated>2019-08-18T10:07:56.825Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;安装jdk&quot;&gt;&lt;a href=&quot;#安装jdk&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://keepongjl.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://keepongjl.github.io/tags/linux/"/>
+    
+      <category term="linux环境配置" scheme="http://keepongjl.github.io/tags/linux%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>kafka安装</title>
     <link href="http://keepongjl.github.io/2019/08/18/kafka-install/"/>
     <id>http://keepongjl.github.io/2019/08/18/kafka-install/</id>
     <published>2019-08-18T03:17:25.000Z</published>
-    <updated>2019-08-18T05:00:47.066Z</updated>
+    <updated>2019-08-18T09:59:49.217Z</updated>
     
     <summary type="html">
     
