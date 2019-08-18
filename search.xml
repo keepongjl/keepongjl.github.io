@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>kafka安装</title>
+      <link href="/2019/08/18/kafka-install/"/>
+      <url>/2019/08/18/kafka-install/</url>
+      
+        <content type="html"><![CDATA[<h2 id="mac环境下安装kafka"><a href="#mac环境下安装kafka" class="headerlink" title="mac环境下安装kafka"></a>mac环境下安装kafka</h2><p>​    本次使用Homebrew安装kafka，如果没有安装homebrew的话，请自行google，鉴于伟大的GFW的存在，推荐设置homebrew为国内镜像源加速。</p><p>安装kafka前需要有jdk环境，如果没有安装，则自行安装。</p><p>废话不多说，开始安装kafka，执行安装命令</p><pre><code class="shell">brew install kafka</code></pre><p>done</p><p>下面我们来看下homebrew将kafka安装在那了？</p><p>首先，通过homebrew安装的东西，均会放在<code>/usr/local/Cellar</code>这个目录下</p><p>本次homebrew将kafka安装在<code>/usr/local/Cellar/kafka</code>目录下，由于kafka的安装需要<code>zookeeper</code>的支持，所以，本次命令也是有安装<code>zookeeper</code>的，zookeeper的安装目录在<code>/usr/local/Cellar/zookeeper</code></p><p>本次安装的kafka的版本为<code>2.2.0</code>，zookeeper版本为<code>3.4.13</code></p><p>文件的安装目录在<code>/usr/local/Cellar</code>中，不过kafka和zookeeper的启动脚本、配置文件以及日志等链接到了其他目录</p><ul><li>二进制文件和脚本在<code>/usr/local/bin</code>目录下，在这里可以看到zk的脚本<code>zkServer</code>、<code>zkCli</code>等和kafka的一些脚本<code>kafka-server-start</code>、<code>kafka-server-stop</code>等。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> kafka </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> kafka </tag>
+            
+            <tag> kafka安装 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2019/08/15/hello-world/"/>
       <url>/2019/08/15/hello-world/</url>

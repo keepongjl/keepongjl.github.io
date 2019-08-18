@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keepongjl.github.io/"/>
-  <updated>2019-08-15T10:26:53.007Z</updated>
+  <updated>2019-08-18T03:53:41.492Z</updated>
   <id>http://keepongjl.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kafka安装</title>
+    <link href="http://keepongjl.github.io/2019/08/18/kafka-install/"/>
+    <id>http://keepongjl.github.io/2019/08/18/kafka-install/</id>
+    <published>2019-08-18T03:17:25.000Z</published>
+    <updated>2019-08-18T03:53:41.492Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mac环境下安装kafka&quot;&gt;&lt;a href=&quot;#mac环境下安装kafka&quot; class=&quot;headerlink&quot; title=&quot;mac环境下安装kafka&quot;&gt;&lt;/a&gt;mac环境下安装kafka&lt;/h2&gt;&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+      <category term="kafka" scheme="http://keepongjl.github.io/categories/kafka/"/>
+    
+    
+      <category term="kafka" scheme="http://keepongjl.github.io/tags/kafka/"/>
+    
+      <category term="kafka安装" scheme="http://keepongjl.github.io/tags/kafka%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
