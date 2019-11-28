@@ -4,13 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="linux环境配置, 曉">
-    <meta name="description" content="安装jdk下载jdk的rpm文件jdk-8u221-linux-i586.rpm
-## 安装JDK
-rpm -ivh jdk-8u221-linux-i586.rpm
-## 修改文件夹名称
-cd /usr/java/
-mv jdk1.8.0">
+    <meta name="keywords" content="zookeeper, 曉">
+    <meta name="description" content="zookeeper配置文件详解# The number of milliseconds of each tick
+# tick 滴答，可以理解为心跳，为时间单位，initLimit和syncLimit均使用的次单位
+tickTime=200">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@ mv jdk1.8.0">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>linux环境配置 | 曉</title>
+    <title>zookeeper | 曉</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -265,13 +262,13 @@ mv jdk1.8.0">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        linux环境配置
+                        zookeeper
                     </div>
                 </div>
             </div>
@@ -293,12 +290,8 @@ mv jdk1.8.0">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/linux/" target="_blank">
-                                <span class="chip bg-color">linux</span>
-                            </a>
-                        
-                            <a href="/tags/linux环境配置/" target="_blank">
-                                <span class="chip bg-color">linux环境配置</span>
+                            <a href="/tags/zookeeper/" target="_blank">
+                                <span class="chip bg-color">zookeeper</span>
                             </a>
                         
                     </div>
@@ -309,8 +302,8 @@ mv jdk1.8.0">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/linux/" class="post-category" target="_blank">
-                                linux
+                            <a href="/categories/zookeeper/" class="post-category" target="_blank">
+                                zookeeper
                             </a>
                         
                     </div>
@@ -321,7 +314,7 @@ mv jdk1.8.0">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-18
+                    2019-09-22
                 </div>
 
                 
@@ -337,22 +330,48 @@ mv jdk1.8.0">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><p>下载jdk的rpm文件<code>jdk-8u221-linux-i586.rpm</code></p>
-<pre><code class="shell">## 安装JDK
-rpm -ivh jdk-8u221-linux-i586.rpm
-## 修改文件夹名称
-cd /usr/java/
-mv jdk1.8.0_221-i586/ jdk1.8
-## 配置jdk的环境变量
-cd /usr/local/
-vi .bashrc
-## 修改环境变量配置
-export JAVA_HOME=/usr/java/jdk1.8
-export PATH=$PATH:$JAVA_HOME/bin
-## 刷新配置
-source .bashrc
-## 验证是否安装成功
-java -version</code></pre>
+                <h3 id="zookeeper配置文件详解"><a href="#zookeeper配置文件详解" class="headerlink" title="zookeeper配置文件详解"></a>zookeeper配置文件详解</h3><pre><code class="shell"># The number of milliseconds of each tick
+# tick 滴答，可以理解为心跳，为时间单位，initLimit和syncLimit均使用的次单位
+tickTime=2000
+# The number of ticks that the initial 
+# synchronization phase can take
+initLimit=10
+# The number of ticks that can pass between 
+# sending a request and getting an acknowledgement
+# fowller和leader之间的心跳是5tick,即leader和fowller发送消息，request和response的最长时间
+syncLimit=5
+# the directory where the snapshot is stored.
+# do not use /tmp for storage, /tmp here is just 
+# example sakes.
+# dataLogDir如果没提供的话使用的则是dataDir。zookeeper的持久化都存储在这两个目录里。
+# dataLogDir里是放到的顺序日志(WAL)。而dataDir里放的是内存数据结构的snapshot，便于快速恢复。
+# 为了达到性能最大化，一般建议把dataDir和dataLogDir分到不同的磁盘上，这样就可以充分利用磁盘顺序写的特性。
+dataLogDir=/usr/local/zookeeper/logs
+dataDir=/usr/local/zookeeper/data
+# the port at which the clients will connect 一个TCP端口
+clientPort=2181
+# the maximum number of client connections.
+# increase this if you need to handle more clients
+# 对于一个客户端的连接数限制，默认是60，这在大部分时候是足够了。但是在我们实际使用中发现，在测试环境经常超过这个数，经过调查发现有的团队将几十个应用全部部署到一台机器上，以方便测试，于是这个数字就超过了
+#maxClientCnxns=60
+#
+# Be sure to read the maintenance section of the 
+# administrator guide before turning on autopurge.
+#  一般，客户端连接zookeeper的时候，都会设置一个session timeout，如果超过这个时间client没有与zookeeper server有联系，则这个session会被设置为过期(如果这个session上有临时节点，则会被全部删除，这就是实现集群感知的基础，后面的文章会介绍这一点)。但是这个时间不是客户端可以无限制设置的，服务器可以设置这两个参数来限制客户端设置的范围
+#
+# http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance
+#
+# The number of snapshots to retain in dataDir
+# autopurge.snapRetainCount，autopurge.purgeInterval -- 客户端在与zookeeper交互过程中会产生非常多的日志，而且zookeeper也会将内存中的数据作为snapshot保存下来，这些数据是不会被自动删除的，这样磁盘中这样的数据就会越来越多。不过可以通过这两个参数来设置，让zookeeper自动删除数据。autopurge.purgeInterval就是设置多少小时清理一次。而autopurge.snapRetainCount是设置保留多少个snapshot，之前的则删除。
+
+# 不过如果你的集群是一个非常繁忙的集群，然后又碰上这个删除操作，可能会影响zookeeper集群的性能，所以一般会让这个过程在访问低谷的时候进行，但是遗憾的是zookeeper并没有设置在哪个时间点运行的设置，所以有的时候我们会禁用这个自动删除的功能，而在服务器上配置一个cron，然后在凌晨来干这件事
+#autopurge.snapRetainCount=3
+# Purge task interval in hours
+# Set to &quot;0&quot; to disable auto purge feature
+#autopurge.purgeInterval=1
+server.1= 192.168.1.131:2888:3888
+server.2= 192.168.1.132:2888:3888
+server.3= 192.168.1.133:2888:3888</code></pre>
 
             </div>
             <hr/>
@@ -511,9 +530,9 @@ java -version</code></pre>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《linux环境配置》
+                    《zookeeper》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/18/linux-env/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/22/zookeeper/" property="cc:attributionName"
                rel="cc:attributionURL">
                 gjl
             </a> 采用
@@ -557,44 +576,32 @@ java -version</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/22/zookeeper/">
+                <a href="/2019/11/28/shardingsphere/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="zookeeper">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="ShardingSphere">
                         
-                        <span class="card-title">zookeeper</span>
+                        <span class="card-title">ShardingSphere</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            zookeeper
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-28
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/zookeeper/" class="post-category" target="_blank">
-                                    zookeeper
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            gjl
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/zookeeper/" target="_blank">
-                        <span class="chip bg-color">zookeeper</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -606,19 +613,19 @@ java -version</code></pre>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/18/kafka-install/">
+                <a href="/2019/08/18/linux-env/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="kafka安装">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="linux环境配置">
                         
-                        <span class="card-title">kafka安装</span>
+                        <span class="card-title">linux环境配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mac环境和linux环境下的kafka的安装
+                            centos 6 环境配置
                         
                     </div>
                     <div class="publish-info">
@@ -629,8 +636,8 @@ java -version</code></pre>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/kafka/" class="post-category" target="_blank">
-                                    kafka
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
                                 </a>
                             
                             
@@ -640,12 +647,12 @@ java -version</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/kafka/" target="_blank">
-                        <span class="chip bg-color">kafka</span>
+                    <a href="/tags/linux/" target="_blank">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/kafka安装/" target="_blank">
-                        <span class="chip bg-color">kafka安装</span>
+                    <a href="/tags/linux环境配置/" target="_blank">
+                        <span class="chip bg-color">linux环境配置</span>
                     </a>
                     
                 </div>
