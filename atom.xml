@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keepongjl.github.io/"/>
-  <updated>2019-11-28T08:54:22.506Z</updated>
+  <updated>2019-11-28T08:59:14.440Z</updated>
   <id>http://keepongjl.github.io/</id>
   
   <author>
@@ -21,12 +21,24 @@
     <link href="http://keepongjl.github.io/2019/11/28/shardingsphere/"/>
     <id>http://keepongjl.github.io/2019/11/28/shardingsphere/</id>
     <published>2019-11-28T08:54:22.000Z</published>
-    <updated>2019-11-28T08:54:22.506Z</updated>
+    <updated>2019-11-28T08:59:14.440Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;h1 id=&quot;ShardingSphere和PostgreSQL扫盲&quot;&gt;&lt;a href=&quot;#ShardingSphere和PostgreSQL扫盲&quot; class=&quot;headerlink&quot;
+        
+      
+    
     </summary>
     
+      <category term="ShardingSphere" scheme="http://keepongjl.github.io/categories/ShardingSphere/"/>
+    
+    
+      <category term="ShardingSphere" scheme="http://keepongjl.github.io/tags/ShardingSphere/"/>
     
   </entry>
   
