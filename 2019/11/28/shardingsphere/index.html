@@ -346,8 +346,71 @@
 <h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><h3 id="github地址以及相关资料"><a href="#github地址以及相关资料" class="headerlink" title="github地址以及相关资料"></a>github地址以及相关资料</h3><p><a href="https://github.com/apache/incubator-shardingsphere​" target="_blank" rel="noopener">ShardingSphere</a></p>
 <p><a href="https://github.com/apache/incubator-shardingsphere-example" target="_blank" rel="noopener">SharedingExample</a></p>
 <p><a href="https://shardingsphere.apache.org/index_zh.html" target="_blank" rel="noopener">官方文档</a></p>
-<p><a href="https://www.infoq.cn/article/1QvyzW9W*YuF685kYBkq" target="_blank" rel="noopener">相关博客</a></p>
+<p><a href="https://www.infoq.cn/article/1QvyzW9W*YuF685kYBkq" target="_blank" rel="noopener">ShardingSphere在京东的落地</a></p>
+<p><a href="https://segmentfault.com/a/1190000017272697" target="_blank" rel="noopener">数据库中间件</a></p>
 <p><strong>推荐大家去看官方文档，下载官方sample进行尝试</strong></p>
+<h2 id="分库分表概述"><a href="#分库分表概述" class="headerlink" title="分库分表概述"></a>分库分表概述</h2><p>以下内容来自官网：</p>
+<blockquote>
+<p>ShardingSphere是一套开源的分布式数据库中间件解决方案组成的生态圈，它由Sharding-JDBC、Sharding-Proxy和Sharding-Sidecar（计划中）这3款相互独立的产品组成。 他们均提供标准化的数据分片、分布式事务和数据库治理功能，可适用于如Java同构、异构语言、云原生等各种多样化的应用场景。</p>
+</blockquote>
+<p>ShardingSphere是关系型数据库中间件，有主要有三个功能：数据分片、分布式事务、数据库治理，目前我们主要使用了数据分片功能。</p>
+<p><img src="https://shardingsphere.apache.org/document/current/img/shardingsphere-scope_cn.png" alt="ShardingSphere生态圈"></p>
+<p>我们本次主要关注<strong>Sharding-JDBC</strong></p>
+<blockquote>
+<p>定位为轻量级Java框架，在Java的JDBC层提供的额外服务。 它使用客户端直连数据库，以jar包形式提供服务，无需额外部署和依赖，可理解为增强版的JDBC驱动，完全兼容JDBC和各种ORM框架。</p>
+<ul>
+<li>适用于任何基于JDBC的ORM框架，如：JPA, Hibernate, Mybatis, Spring JDBC Template或直接使用JDBC。</li>
+<li>支持任何第三方的数据库连接池，如：DBCP, C3P0, BoneCP, Druid, HikariCP等。</li>
+<li>支持任意实现JDBC规范的数据库。目前支持MySQL，Oracle，SQLServer，PostgreSQL以及任何遵循SQL92标准的数据库。</li>
+</ul>
+</blockquote>
+<p><img src="https://shardingsphere.apache.org/document/current/img/sharding-jdbc-brief.png" alt="Sharding-JDBC"></p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"><em>Sharding-JDBC</em></th>
+<th align="left"><em>Sharding-Proxy</em></th>
+<th><em>Sharding-Sidecar</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">数据库</td>
+<td align="left">任意</td>
+<td align="left">MySQL</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td align="left">连接消耗数</td>
+<td align="left">高</td>
+<td align="left">低</td>
+<td>高</td>
+</tr>
+<tr>
+<td align="left">异构语言</td>
+<td align="left">仅Java</td>
+<td align="left">任意</td>
+<td>任意</td>
+</tr>
+<tr>
+<td align="left">性能</td>
+<td align="left">损耗低</td>
+<td align="left">损耗略高</td>
+<td>损耗低</td>
+</tr>
+<tr>
+<td align="left">无中心化</td>
+<td align="left">是</td>
+<td align="left">否</td>
+<td>是</td>
+</tr>
+<tr>
+<td align="left">静态入口</td>
+<td align="left">无</td>
+<td align="left">有</td>
+<td>无</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr/>
