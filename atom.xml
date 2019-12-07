@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keepongjl.github.io/"/>
-  <updated>2019-11-29T09:27:19.793Z</updated>
+  <updated>2019-12-07T03:29:09.995Z</updated>
   <id>http://keepongjl.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mac环境安装mysql</title>
+    <link href="http://keepongjl.github.io/2019/12/05/mac-install-mysql/"/>
+    <id>http://keepongjl.github.io/2019/12/05/mac-install-mysql/</id>
+    <published>2019-12-05T08:54:22.000Z</published>
+    <updated>2019-12-07T03:29:09.995Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;brew-安装mysql-5-7&quot;&gt;&lt;a href=&quot;#brew-安装mysql-5-7&quot; class=&quot;headerlink&quot; title=&quot;brew 安装mysql@5.7&quot;&gt;&lt;/a&gt;brew 安装&lt;a href=&quot;mailto:mysql@5.7&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://keepongjl.github.io/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://keepongjl.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ShardingSphere</title>
     <link href="http://keepongjl.github.io/2019/11/28/shardingsphere/"/>
     <id>http://keepongjl.github.io/2019/11/28/shardingsphere/</id>
     <published>2019-11-28T08:54:22.000Z</published>
-    <updated>2019-11-29T09:27:19.793Z</updated>
+    <updated>2019-12-02T12:30:03.758Z</updated>
     
     <summary type="html">
     

@@ -4,14 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ShardingSphere, 曉">
-    <meta name="description" content="ShardingSphere和PostgreSQL扫盲学习
-图片来自网络，侵删
-总结起来就是三部分：
-
-它是什么？有哪些功能点？同类的技术有哪些？对比同类技术来说，有哪些优点和缺点
-快速入门HelloWorld上手
-最佳实践&amp;amp;&amp;am">
+    <meta name="keywords" content="mac环境安装mysql, 曉">
+    <meta name="description" content="brew 安装mysql@5.7使用brew安装mysql5.7版本
+brew install mysql@5.7
+安装完成之后会有以下内容显示
+==&amp;gt; mysql@5.7
+We&amp;#39;ve installed your MySQL">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ShardingSphere | 曉</title>
+    <title>mac环境安装mysql | 曉</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -266,13 +264,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ShardingSphere
+                        mac环境安装mysql
                     </div>
                 </div>
             </div>
@@ -294,8 +292,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ShardingSphere/" target="_blank">
-                                <span class="chip bg-color">ShardingSphere</span>
+                            <a href="/tags/mysql/" target="_blank">
+                                <span class="chip bg-color">mysql</span>
                             </a>
                         
                     </div>
@@ -306,8 +304,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ShardingSphere/" class="post-category" target="_blank">
-                                ShardingSphere
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                mysql
                             </a>
                         
                     </div>
@@ -318,7 +316,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-12-05
                 </div>
 
                 
@@ -334,90 +332,118 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ShardingSphere和PostgreSQL扫盲"><a href="#ShardingSphere和PostgreSQL扫盲" class="headerlink" title="ShardingSphere和PostgreSQL扫盲"></a>ShardingSphere和PostgreSQL扫盲</h1><h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g9erq57yvnj30u01167sc.jpg" alt="如何学习一门新技术"></p>
-<p><strong>图片来自网络，侵删</strong></p>
-<p>总结起来就是三部分：</p>
-<ol>
-<li>它是什么？有哪些功能点？同类的技术有哪些？对比同类技术来说，有哪些优点和缺点</li>
-<li>快速入门<code>HelloWorld</code>上手</li>
-<li>最佳实践&amp;&amp;源码分析</li>
-<li>总结分享</li>
-</ol>
-<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><h3 id="github地址以及相关资料"><a href="#github地址以及相关资料" class="headerlink" title="github地址以及相关资料"></a>github地址以及相关资料</h3><p><a href="https://github.com/apache/incubator-shardingsphere​" target="_blank" rel="noopener">ShardingSphere</a></p>
-<p><a href="https://github.com/apache/incubator-shardingsphere-example" target="_blank" rel="noopener">SharedingExample</a></p>
-<p><a href="https://shardingsphere.apache.org/index_zh.html" target="_blank" rel="noopener">官方文档</a></p>
-<p><a href="https://www.infoq.cn/article/1QvyzW9W*YuF685kYBkq" target="_blank" rel="noopener">ShardingSphere在京东的落地</a></p>
-<p><a href="https://segmentfault.com/a/1190000017272697" target="_blank" rel="noopener">数据库中间件</a></p>
-<p><strong>推荐大家去看官方文档，下载官方sample进行尝试</strong></p>
-<h2 id="分库分表概述"><a href="#分库分表概述" class="headerlink" title="分库分表概述"></a>分库分表概述</h2><p>以下内容来自官网：</p>
-<blockquote>
-<p>ShardingSphere是一套开源的分布式数据库中间件解决方案组成的生态圈，它由Sharding-JDBC、Sharding-Proxy和Sharding-Sidecar（计划中）这3款相互独立的产品组成。 他们均提供标准化的数据分片、分布式事务和数据库治理功能，可适用于如Java同构、异构语言、云原生等各种多样化的应用场景。</p>
-</blockquote>
-<p>ShardingSphere是关系型数据库中间件，有主要有三个功能：数据分片、分布式事务、数据库治理，目前我们主要使用了数据分片功能。</p>
-<p><img src="https://shardingsphere.apache.org/document/current/img/shardingsphere-scope_cn.png" alt="ShardingSphere生态圈"></p>
-<p>我们本次主要关注<strong>Sharding-JDBC</strong></p>
-<blockquote>
-<p>定位为轻量级Java框架，在Java的JDBC层提供的额外服务。 它使用客户端直连数据库，以jar包形式提供服务，无需额外部署和依赖，可理解为增强版的JDBC驱动，完全兼容JDBC和各种ORM框架。</p>
-<ul>
-<li>适用于任何基于JDBC的ORM框架，如：JPA, Hibernate, Mybatis, Spring JDBC Template或直接使用JDBC。</li>
-<li>支持任何第三方的数据库连接池，如：DBCP, C3P0, BoneCP, Druid, HikariCP等。</li>
-<li>支持任意实现JDBC规范的数据库。目前支持MySQL，Oracle，SQLServer，PostgreSQL以及任何遵循SQL92标准的数据库。</li>
-</ul>
-</blockquote>
-<p><img src="https://shardingsphere.apache.org/document/current/img/sharding-jdbc-brief.png" alt="Sharding-JDBC"></p>
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left"><em>Sharding-JDBC</em></th>
-<th align="left"><em>Sharding-Proxy</em></th>
-<th><em>Sharding-Sidecar</em></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">数据库</td>
-<td align="left">任意</td>
-<td align="left">MySQL</td>
-<td>MySQL</td>
-</tr>
-<tr>
-<td align="left">连接消耗数</td>
-<td align="left">高</td>
-<td align="left">低</td>
-<td>高</td>
-</tr>
-<tr>
-<td align="left">异构语言</td>
-<td align="left">仅Java</td>
-<td align="left">任意</td>
-<td>任意</td>
-</tr>
-<tr>
-<td align="left">性能</td>
-<td align="left">损耗低</td>
-<td align="left">损耗略高</td>
-<td>损耗低</td>
-</tr>
-<tr>
-<td align="left">无中心化</td>
-<td align="left">是</td>
-<td align="left">否</td>
-<td>是</td>
-</tr>
-<tr>
-<td align="left">静态入口</td>
-<td align="left">无</td>
-<td align="left">有</td>
-<td>无</td>
-</tr>
-</tbody></table>
-<p>总结：</p>
-<p>数据库中间件很多，以下排名不分先后：</p>
-<blockquote>
-<p>Atlas、Kingshard、DBProxy、mysql router、MaxScale、58 Oceanus、ArkProxy、Ctrip DAL、Tsharding、Youtube vitess、网易DDB、Heisenberg、proxysql、Mango、DDAL、Datahekr、MTAtlas、MTDDL、Zebra、Cobar</p>
-</blockquote>
-<p><code>SharedingSphere</code>与以上的数据库中间件相比的话，开源社区比较活跃，没有修改mysql协议，功能支持相对完善，推荐使用</p>
-<h2 id="概念以及功能"><a href="#概念以及功能" class="headerlink" title="概念以及功能"></a>概念以及功能</h2>
+                <h2 id="brew-安装mysql-5-7"><a href="#brew-安装mysql-5-7" class="headerlink" title="brew 安装mysql@5.7"></a>brew 安装<a href="mailto:mysql@5.7" target="_blank" rel="noopener">mysql@5.7</a></h2><p>使用brew安装mysql5.7版本</p>
+<pre><code class="shell">brew install mysql@5.7</code></pre>
+<p>安装完成之后会有以下内容显示</p>
+<pre><code class="shell">==&gt; mysql@5.7
+We&#39;ve installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+MySQL is configured to only allow connections from localhost by default
+
+To connect run:
+    mysql -uroot
+
+mysql@5.7 is keg-only, which means it was not symlinked into /usr/local,
+because this is an alternate version of another formula.
+
+If you need to have mysql@5.7 first in your PATH run:
+  echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+
+For compilers to find mysql@5.7 you may need to set:
+  export LDFLAGS=&quot;-L/usr/local/opt/mysql@5.7/lib&quot;
+  export CPPFLAGS=&quot;-I/usr/local/opt/mysql@5.7/include&quot;
+
+
+To have launchd start mysql@5.7 now and restart at login:
+  brew services start mysql@5.7
+Or, if you don&#39;t want/need a background service you can just run:
+  /usr/local/opt/mysql@5.7/bin/mysql.server start</code></pre>
+<p>配置下环境变量</p>
+<pre><code class="shell">  echo &#39;export PATH=&quot;/usr/local/opt/mysql@5.7/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+
+  export LDFLAGS=&quot;-L/usr/local/opt/mysql@5.7/lib&quot;
+
+  export CPPFLAGS=&quot;-I/usr/local/opt/mysql@5.7/include&quot;
+
+  source ~/.zshrc</code></pre>
+<p>启用mysql有两种形式，一种通过brew启动，使用如下命令</p>
+<pre><code class="shell"> brew services start mysql@5.7</code></pre>
+<p>查看mysql进程</p>
+<pre><code class="shell">lsof -i:3306</code></pre>
+<p>另外一种直接使用mysql的mysql.server启用，命令如下：</p>
+<pre><code class="shell">mysql.server start</code></pre>
+<h2 id="初始化配置"><a href="#初始化配置" class="headerlink" title="初始化配置"></a>初始化配置</h2><p>使用命令</p>
+<pre><code class="shell">mysql_secure_installation</code></pre>
+<p>如果使用上述命令让输入密码等问题的话，应该是你的mac之前安装过mysql数据库，所以此时你需要先把之前安装的mysql配置文件以及数据文件清除掉再重新安装mysql，具体参考<a href="https://stackoverflow.com/questions/4359131/brew-install-mysql-on-macos" target="_blank" rel="noopener">https://stackoverflow.com/questions/4359131/brew-install-mysql-on-macos</a></p>
+<pre><code class="shell">brew remove mysql@5.7
+brew cleanup
+
+# 下面两步可能会操作失败，应该是mac系统版本不一致的问题
+launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+
+rm ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+
+sudo rm -rf /usr/local/var/mysql
+
+# 重新安装
+brew install mysql@5.7</code></pre>
+<p>执行<code>mysql_secure_installation</code>后的操作指示如下：</p>
+<pre><code class="shell">Securing the MySQL server deployment.
+
+Connecting to MySQL using a blank password.
+
+VALIDATE PASSWORD PLUGIN can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+Press y|Y for Yes, any other key for No: y   // 这个选yes的话密码长度就必须要设置为8位以上，但我只想要6位的
+Please set the password for root here.
+
+New password:            　// 设置密码
+
+Re-enter new password:     // 再一次确认密码
+By default, a MySQL installation has an anonymous user,
+allowing anyone to log into MySQL without having to have
+a user account created for them. This is intended only for
+testing, and to make the installation go a bit smoother.
+You should remove them before moving into a production
+environment.
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : Y    // 移除不用密码的那个账户
+Success.
+
+
+Normally, root should only be allowed to connect from
+&#39;localhost&#39;. This ensures that someone cannot guess at
+the root password from the network.
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : n　　//不接受root远程登录账号
+
+ ... skipping.
+By default, MySQL comes with a database named &#39;test&#39; that
+anyone can access. This is also intended only for testing,
+and should be removed before moving into a production
+environment.
+
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y　　//删除text数据库
+ - Dropping test database...
+Success.
+
+ - Removing privileges on test database...
+Success.
+
+Reloading the privilege tables will ensure that all changes
+made so far will take effect immediately.
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+All done!</code></pre>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.im/post/5d0c945e6fb9a07eba2c44e1" target="_blank" rel="noopener">mac使用brew安装mysql</a></p>
+
             </div>
             <hr/>
 
@@ -575,9 +601,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《ShardingSphere》
+                    《mac环境安装mysql》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/28/shardingsphere/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/05/mac-install-mysql/" property="cc:attributionName"
                rel="cc:attributionURL">
                 gjl
             </a> 采用
@@ -617,9 +643,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/12/05/mac-install-mysql/">
                     <div class="card-image">
@@ -637,9 +664,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -652,6 +679,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -670,31 +698,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/22/zookeeper/">
+                <a href="/2019/11/28/shardingsphere/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="zookeeper">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="ShardingSphere">
                         
-                        <span class="card-title">zookeeper</span>
+                        <span class="card-title">ShardingSphere</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            zookeeper
+                            ShardingSphere
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/zookeeper/" class="post-category" target="_blank">
-                                    zookeeper
+                            <a href="/categories/ShardingSphere/" class="post-category" target="_blank">
+                                    ShardingSphere
                                 </a>
                             
                             
@@ -704,8 +732,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/zookeeper/" target="_blank">
-                        <span class="chip bg-color">zookeeper</span>
+                    <a href="/tags/ShardingSphere/" target="_blank">
+                        <span class="chip bg-color">ShardingSphere</span>
                     </a>
                     
                 </div>
